@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class CannonCtrl : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Transform tr;
+    public float rotSpeed = 500f;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
