@@ -9,11 +9,12 @@ public class CannonCtrl : MonoBehaviour
 
     void Start()
     {
-        
+        tr = transform;
     }
 
     void Update()
     {
-        
+        float angle = Input.GetAxis("Mouse ScrollWheel") * rotSpeed * Time.deltaTime;
+        tr.Rotate(angle, 0f, 0f);
     }
 }
