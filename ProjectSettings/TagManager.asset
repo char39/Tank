@@ -8,6 +8,8 @@ TagManager:
   - Terrain
   - APACHE
   - Apache
+  - Point
+  - Tank
   layers:
   - Default
   - TransparentFX

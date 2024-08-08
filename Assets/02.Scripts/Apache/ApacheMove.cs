@@ -53,7 +53,7 @@ public class ApacheMove : MonoBehaviour
             else if (Input.GetKey(KeyCode.W))    // W 키를 누르면 위로 이동
             {
                 if (rb.velocity.y < 0)
-                    rb.AddRelativeForce(Vector3.up * moveSpeed * 1.5f * Time.deltaTime, ForceMode.VelocityChange);
+                    rb.AddRelativeForce(Vector3.up * moveSpeed * 3f * Time.deltaTime, ForceMode.VelocityChange);
                 else
                     rb.AddRelativeForce(Vector3.up * moveSpeed * Time.deltaTime, ForceMode.VelocityChange);
                 isGrounded = false;
@@ -61,7 +61,7 @@ public class ApacheMove : MonoBehaviour
             if (Input.GetKey(KeyCode.S))    // S 키를 누르면 아래로 이동
             {
                 if (rb.velocity.y > 0)
-                    rb.AddRelativeForce(Vector3.down * moveSpeed * 1.5f * Time.deltaTime, ForceMode.VelocityChange);
+                    rb.AddRelativeForce(Vector3.down * moveSpeed * 2f * Time.deltaTime, ForceMode.VelocityChange);
                 else
                     rb.AddRelativeForce(Vector3.down * moveSpeed * Time.deltaTime, ForceMode.VelocityChange);
             }
@@ -109,7 +109,7 @@ public class ApacheMove : MonoBehaviour
     {
         if (isGrounded && Input.GetKey(KeyCode.Q))
         {
-            Player.instance.transform.position = transform.position + new Vector3(transform.position.x - 10f, 0.5f, transform.position.z);
+            Player.instance.transform.position = transform.position + new Vector3(transform.position.x - 10f, 5f, transform.position.z);
             Player.instance.playerInside = false;
         }
     }

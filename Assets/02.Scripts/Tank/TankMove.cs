@@ -9,7 +9,7 @@ public class TankMove : MonoBehaviour
     private Rigidbody rb;
     private Transform tr;
     private float tankBodyAngle = 8f;
-    private float tankMoveSpeed = 10f;
+    private float tankMoveSpeed = 20f;
     
     void Start()
     {
