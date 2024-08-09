@@ -28,6 +28,9 @@ public class ApacheMoveAI : MonoBehaviour
     public Quaternion targetRotation;
 
     private GameObject plasmaEffect;
+    private GameObject bullet;
+
+    public Transform[] firePos = new Transform[2];
 
     void Start()
     {
@@ -40,6 +43,7 @@ public class ApacheMoveAI : MonoBehaviour
             PointList.Add(Points[i].transform);
         }
         plasmaEffect = Resources.Load<GameObject>("PlasmaExplosionEffect");
+        bullet = Resources.Load<GameObject>("Bullet_ApacheAI");
     }
 
     void FixedUpdate()
@@ -198,14 +202,17 @@ public class ApacheMoveAI : MonoBehaviour
     IEnumerator Fire()
     {
         onFire = true;
-        Ray ray = new Ray(tr.position, tr.forward);
+        /* Ray ray = new Ray(tr.position, tr.forward);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, 100f))
         {
             if (hit.collider.CompareTag("Tank"))
                 Instantiate(plasmaEffect, hit.point, Quaternion.identity);
-        }
+        } */
+        Instantiate(bullet, firePos[0].position, firePos[0].rotation);
+        Instantiate(bullet, firePos[1].position, firePos[1].rotation);
+
         yield return new WaitForSeconds(1f);
         onFire = false;
     }
